@@ -40,4 +40,6 @@ class TestKMeans(unittest.TestCase):
 
         expected_centroid = [[30757.5, 1099.34375], [346497.0, 5212.0]]
 
-        self.assertAlmostEqual(sorted(list(centroid)), sorted(list(expected_centroid)))
+        np.testing.assert_almost_equal(
+            sorted(list(centroid)), sorted(list(expected_centroid))
+        )

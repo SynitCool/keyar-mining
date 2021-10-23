@@ -1,1 +1,17 @@
-__pycache__/
+# cache in keyar-mining
+dist
+keyar_mining.egg-info
+
+# pycache in krmining
+krmining/__pycache__
+
+krmining/association_rules/__pycache__
+krmining/association_rules/tests/__pycache__
+
+krmining/clustering/__pycache__
+krmining/clustering/tests/__pycache__
+
+krmining/classification/__pycache__
+krmining/classification/tests/__pycache__
+
+krmining/datasets/__pycache__
