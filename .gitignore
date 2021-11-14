@@ -1,6 +1,7 @@
 # cache in keyar-mining
 dist
 keyar_mining.egg-info
+MANIFEST
 
 # pycache in krmining
 krmining/__pycache__
@@ -15,3 +16,6 @@ krmining/classification/__pycache__
 krmining/classification/tests/__pycache__
 
 krmining/datasets/__pycache__
+
+krmining/utils/__pycache__
+krmining/utils/tests/__pycache__

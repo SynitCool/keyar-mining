@@ -6,6 +6,8 @@ store_set = []
 store_counts = []
 store = []
 
+store_nodes = []
+
 
 class Node:
     def __init__(self, data):
@@ -93,6 +95,16 @@ class Node:
         else:
             store.append(node.data)
             node.back_node_parent(node.node_parent)
+
+    def get_nodes(self):
+        if self.data and self.data not in store_nodes:
+            store_nodes.append(self.data)
+
+        if self.nodes:
+            for node in self.nodes:
+                node.get_nodes()
+
+        return store_nodes
 
 
 def make_tree(lst):
