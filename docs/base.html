@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/bootstrap.css" rel="stylesheet"/>
+        <link href="css/sidebars.css" rel="stylesheet"/>
+        <title>Synit Web - Keyar Mining</title>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="/keyar-mining">Keyar-Mining - 0.0.1</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/keyar-mining/home">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/keyar-mining/api">API</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" href="/keyar-mining/about" tabindex="-1">About</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" href="https://synit-web.herokuapp.com/" tabindex="-1">Synit-Web</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        {% block content %}
+        {% endblock%}
+        <div class="p-5 bg-dark" style="position: relative; bottom: 0px;">
+            <div class="row">
+              <div class="col">
+                <div class="container">
+                  <h4 style="color: aliceblue">Find Me</h4>
+                  <span>
+                    <a href="https://www.github.com/SynitCool" target="_blank">
+                      <img src="{{url_for('static', filename='assets/github-logo.png')}}" width=35 height=35/>
+                    </a>
+                    <a href="https://www.kaggle.com/synitiscool" target="_blank" style="padding:0.5em;">
+                      <img src="{{url_for('static', filename='assets/kaggle-logo.png')}}" width=35 height=35/>
+                    </a>
+                    <a href="https://www.freecodecamp.org/fcc486c4e09-f778-4dc6-a365-79de7a9a19d8" target="_blank">
+                      <img src="{{url_for('static', filename='assets/fcc-logo.png')}}" width=35 height=35/>
+                    </a>
+                  </span>
+                </div>
+              </div>
+              <div class="col">
+                <h4 style="color: aliceblue">This Website</h4>
+                <p class="lead" style="color: aliceblue;">
+                  This website is about keyar-mining, and it's posted Apis about package machine learning or 
+                  data mining.
+                </p>
+              </div>
+            </div>
+        </div>
+      <script src="js/bootstrap.js"></script>
+    </body>
+</html>
