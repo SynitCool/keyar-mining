@@ -19,3 +19,7 @@ krmining/datasets/__pycache__
 
 krmining/utils/__pycache__
 krmining/utils/tests/__pycache__
+
+# docs
+docs/sitemap.xml
+docs/sitemap.xml.gz
