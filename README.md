@@ -12,7 +12,7 @@
 
 #### PyPI
 
-To install mlxtend, just execute  
+To install keyar-mining, just execute  
 
 ```bash
 pip install keyar-mining  
