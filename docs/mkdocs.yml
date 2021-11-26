@@ -18,12 +18,20 @@ nav:
   - Home: index.md
   - Association Rules:
       - Intro: association_rules/index.md
+      - Apriori: association_rules/association_rules.apriori.ipynb
+      - Fpgrowth: association_rules/association_rules.fpgrowth.ipynb
+      - Evaluate: association_rules/association_rules.evaluate.ipynb
   - Classification:
       - Intro: classification/index.md
+      - KNearestClassifier: classification/classification.knn.ipynb
   - Clustering:
       - Intro: clustering/index.md
+      - KMeans: clustering/clustering.kmeans.ipynb
   - Dataset:
       - Intro: datasets/index.md
+      - Classification Data: datasets/datasets.classification.ipynb
+      - Covid Data: datasets/datasets.covid_dataset.ipynb
+      - Association Rules: datasets/datasets.association_rules.ipynb
 
 plugins:
   - mkdocs-jupyter:
