@@ -18,6 +18,17 @@ To install keyar-mining, just execute
 pip install keyar-mining  
 ```
 
+#### Pypi download files
+
+If pypi files won't load the file : 
+1. install [krmining](https://codeload.github.com/SynitCool/keyar-mining/tar.gz/refs/tags/0.0.1)
+2. unzip krmining.tar.gz
+3. move the files in keyar-mining to site-packages
+
+Why this happen cause i always forget to specify the config and setup :P
+
+
+
 <br>
 <br>
 
