@@ -8,6 +8,7 @@
 ## Links
 
 - PyPI: [https://pypi.org/project/keyar-mining](https://pypi.org/project/keyar-mining)
+- Keyar-mining Doc: [https://synitcool.github.io/keyar-mining/](https://synitcool.github.io/keyar-mining/)
 
 <br>
 <br>
