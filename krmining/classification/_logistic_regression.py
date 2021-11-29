@@ -89,8 +89,8 @@ class LogisticRegression:
             dw = (1 / n_samples) * np.dot(X.T, (y_predicted - y))
             db = (1 / n_samples) * np.sum(y_predicted - y)
             # update parameters
-            self.weights -= self.lr * dw
-            self.intercept -= self.lr * db
+            self.set_weights -= self.lr * dw
+            self.set_intercept -= self.lr * db
 
         return self
 
@@ -122,7 +122,7 @@ class LogisticRegression:
             )
 
         linear_model = np.dot(X, self.weights) + self.intercept
-        y_predicted = self._sigmoid(linear_model)
+        y_predicted = sigmoid_function(linear_model)
         y_predicted_cls = [1 if i > 0.5 else 0 for i in y_predicted]
         return np.array(y_predicted_cls)
 
@@ -135,7 +135,7 @@ class LogisticRegression:
         return self.__bias
 
     @weights.setter
-    def set_weigths(self, new_weights):
+    def set_weights(self, new_weights):
         self.__weights = new_weights
 
     @intercept.setter

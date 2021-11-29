@@ -1,5 +1,9 @@
 **Keyar-mining is a Python library for machine learning and data mining.**
 
+> **WARNING**: This package is created just for learning about machine learning algorithm!
+
+> **WARNING**: Not recommended to be using for high task data!
+
 ## Links
 
 - PyPI: [https://pypi.org/project/keyar-mining](https://pypi.org/project/keyar-mining)

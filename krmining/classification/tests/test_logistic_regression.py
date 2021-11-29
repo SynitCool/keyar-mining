@@ -28,7 +28,7 @@ class TestLogisticRegression(unittest.TestCase):
         # Expected output
         self.expected_predict = np.array([0, 0, 1, 1, 0, 0, 0, 1, 1, 1])
 
-    def predict(self):
+    def test_predict(self):
         # training the model
         model = LogisticRegression()
         model.fit(self.X, self.y)
@@ -37,4 +37,4 @@ class TestLogisticRegression(unittest.TestCase):
         y_pred = model.predict(self.X)
 
         # testing
-        self.assertEqual(y_pred, self.expected_predict)
+        np.testing.assert_almost_equal(y_pred, self.expected_predict)
