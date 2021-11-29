@@ -17,6 +17,9 @@ krmining/classification/tests/__pycache__
 
 krmining/datasets/__pycache__
 
+krmining/regression/__pycache__
+krmining/regression/tests/__pycache__
+
 krmining/utils/__pycache__
 krmining/utils/tests/__pycache__
 

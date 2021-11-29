@@ -31,7 +31,9 @@ class TestKMeans(unittest.TestCase):
         centroid = np.ravel(centroid)
         expected_centroid = np.ravel(expected_centroid)
 
-        self.assertAlmostEqual(sorted(list(centroid)), sorted(list(expected_centroid)))
+        np.testing.assert_almost_equal(
+            sorted(list(centroid)), sorted(list(expected_centroid))
+        )
 
     def test_kmeans_kmeans_plusplus(self):
         kmeans = KMeans(self.k, init="k-means++")
