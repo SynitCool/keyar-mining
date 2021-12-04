@@ -2,12 +2,13 @@ import numpy as np
 import warnings
 
 from krmining.utils.activation_funtions import sigmoid_function
+from krmining.utils.optimizer import gradient_descent_optimizer
 
 
 class LogisticRegression:
     """
     Logistic Regression
-    **For 2 classes only**
+    **Try multiple class logistic regression**
     """
 
     def __init__(self, learning_rate=0.001, epochs=1000):
@@ -28,18 +29,12 @@ class LogisticRegression:
         Returns
         -------
         Initialize config the model
-
-
-        Credits
-        -------
-        Origin of code: https://www.youtube.com/watch?v=JDU3AzH3WKg
-        The link of repo: https://github.com/python-engineer/MLfromscratch/blob/master/mlfromscratch/logistic_regression.py
         """
 
         self.lr = learning_rate
         self.epochs = epochs
-        self.__weights = None
-        self.__bias = None
+        self.weights = []
+        self.intercept = []
 
         warnings.warn(
             "The model still in maintaining in slow or extended memory", UserWarning
@@ -72,25 +67,30 @@ class LogisticRegression:
         elif len(y.shape) != 1:
             raise ValueError("shape of y supposed to be (n_samples,)")
 
-        n_samples, n_features = X.shape
+        labels = np.unique(y)
+        for label in labels:
+            # finding index for current class as 1
+            index_class = np.where(label == y)[0]
+            X_1 = X[index_class]
+            y_1 = np.ones((X_1.shape[0]), dtype="int32")
 
-        # init parameters
-        self.set_weights = np.zeros(n_features)
-        self.set_intercept = 0
+            # finding other for other class index as 0
+            index_class = np.where(label != y)[0]
+            X_0 = X[index_class]
+            y_0 = np.zeros((X_0.shape[0]), dtype="int32")
 
-        # gradient descent
-        for _ in range(self.epochs):
-            # approximate y with linear combination of weights and x, plus bias
-            linear_model = np.dot(X, self.weights) + self.intercept
-            # apply sigmoid function
-            y_predicted = sigmoid_function(linear_model)
+            # concatenate X's and y's
+            X_concat = np.concatenate([X_0, X_1])
+            y_concat = np.concatenate([y_0, y_1])
 
-            # compute gradients
-            dw = (1 / n_samples) * np.dot(X.T, (y_predicted - y))
-            db = (1 / n_samples) * np.sum(y_predicted - y)
-            # update parameters
-            self.set_weights -= self.lr * dw
-            self.set_intercept -= self.lr * db
+            # gradient descent
+            weights, intercept = gradient_descent_optimizer(
+                X_concat, y_concat, self.lr, self.epochs
+            )
+
+            # appending
+            self.weights.append(weights)
+            self.intercept.append(intercept)
 
         return self
 
@@ -105,8 +105,8 @@ class LogisticRegression:
 
         Returns
         -------
-        y_predicted_cls: list or shape(n_samples, )
-            the predicted of X
+        probability: numpy.ndarray or shape(n_samples, n_labels)
+            the probability of X
 
         """
         X = np.array(X)
@@ -121,23 +121,15 @@ class LogisticRegression:
                 "The model has not been trained, training the model first"
             )
 
-        linear_model = np.dot(X, self.weights) + self.intercept
-        y_predicted = sigmoid_function(linear_model)
-        y_predicted_cls = [1 if i > 0.5 else 0 for i in y_predicted]
-        return np.array(y_predicted_cls)
+        # predicting using every weights and intercept
+        probability = []
+        for weight, bias in zip(self.weights, self.intercept):
+            linear_model = np.dot(X, weight) + bias
+            y_predicted = sigmoid_function(linear_model)
 
-    @property
-    def weights(self):
-        return self.__weights
+            probability.append(np.array(y_predicted))
 
-    @property
-    def intercept(self):
-        return self.__bias
+        probability = np.array(probability)
+        probability = probability.T
 
-    @weights.setter
-    def set_weights(self, new_weights):
-        self.__weights = new_weights
-
-    @intercept.setter
-    def set_intercept(self, new_intercept):
-        self.__bias = new_intercept
+        return probability
