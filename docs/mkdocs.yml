@@ -24,7 +24,7 @@ nav:
   - Classification:
       - Intro: classification/index.md
       - KNearestClassifier: classification/classification.knn.ipynb
-      - Linear Regression: classification/classification.logistic_regression.ipynb
+      - Logistic Regression: classification/classification.logistic_regression.ipynb
   - Clustering:
       - Intro: clustering/index.md
       - KMeans: clustering/clustering.kmeans.ipynb
