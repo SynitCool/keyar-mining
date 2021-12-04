@@ -1,4 +1,5 @@
 # cache in keyar-mining
+build
 dist
 keyar_mining.egg-info
 MANIFEST
