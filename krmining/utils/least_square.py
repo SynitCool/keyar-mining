@@ -76,3 +76,38 @@ def calc_intercept(X, y, slope):
     output = mean_y - summing_weighted_mean_x
 
     return output
+
+
+def calc_with_svd(a, b):
+    """
+    Finding x with svd in equation ax = b.
+    where a and b are known.
+
+    Parameters
+    ----------
+    a: numpy.ndarray or shape (n, f)
+        The independent variables to be calculate with svd
+
+    b: numpy.ndarray or shape (n, )
+        The dependent variable of a
+
+    Returns
+    -------
+    x: numpy.ndarray or shape (f, )
+        Solved to find x of ax = b equation
+
+    """
+    # change to numpy.array
+    a = np.array(a)
+    b = np.array(b)
+
+    # raises the error
+    if a.shape[0] != b.shape[0]:
+        raise ValueError("the rows of a and b supposed to be same")
+    elif len(b.shape) != 1:
+        raise ValueError("for now the shape of b supposed to be (n, ")
+
+    # solving least square with svd
+    x, residuals, rank, s = np.linalg.lstsq(a, b, rcond=None)
+
+    return x
