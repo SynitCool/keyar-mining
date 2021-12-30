@@ -12,7 +12,7 @@ setup(
     author="BASIS / SynitIsCool",
     author_email="zolarpixel3@gmail.com",
     url="https://github.com/SynitCool/keyar-mining",
-    download_url="https://github.com/SynitCool/keyar-mining/archive/refs/tags/v0.0.2.tar.gz",
+    download_url="https://github.com/SynitCool/keyar-mining/archive/refs/tags/v0.0.3.tar.gz",
     keywords=["Data Mining", "Machine Learning"],
     include_package_data=True,
     python_requires=">= 3.5",
