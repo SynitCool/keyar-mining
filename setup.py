@@ -1,9 +1,12 @@
+import krmining
 from setuptools import setup, find_packages
+
+VERSION = krmining.__version__
 
 setup(
     name="keyar-mining",
     packages=find_packages(),
-    version="0.0.2",
+    version=VERSION,
     license="MIT",
     description="Package for machine learning algorithm and data mining",
     author="BASIS / SynitIsCool",
@@ -15,7 +18,7 @@ setup(
     python_requires=">= 3.5",
     extras_require={"docs": ["mkdocs"]},
     platforms="any",
-    install_requires=["numpy", "pandas", "setuptools"],
+    install_requires=["numpy", "pandas", "setuptools", "dill"],
     classifiers=[
         "Development Status :: 5 - Production/Stable",
         "License :: OSI Approved :: MIT License",

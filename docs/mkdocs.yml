@@ -33,6 +33,9 @@ nav:
       - Association Rules: datasets/datasets.association_rules.ipynb
       - Covid Data: datasets/datasets.covid_dataset.ipynb
       - Classification Data: datasets/datasets.classification.ipynb
+  - External:
+      - Intro: external/index.md
+      - Wrapper: external/external.wrapper.ipynb
   - Regression:
       - Intro: regression/index.md
       - Linear Regression: regression/regression.linear_regression.ipynb
