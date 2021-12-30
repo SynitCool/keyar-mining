@@ -1,0 +1,45 @@
+site_name: Keyar-mining
+docs_dir: sources
+
+site_url: http://synitcool.github.io/keyar-mining
+site_author: SynitIsCool
+site_description: Package for machine learning and data mining
+repo_url: https://github.com/SynitCool/keyar-mining
+repo_name: GitHub
+
+copyright: "Keyar-mining is licensed under the <a href='https://github.com/SynitCool/keyar-mining/blob/main/LICENSE'>MIT license</a>"
+
+theme:
+  name: material
+  palette:
+    primary: black
+
+nav:
+  - Home: index.md
+  - Association Rules:
+      - Intro: association_rules/index.md
+      - Apriori: association_rules/association_rules.apriori.ipynb
+      - Evaluate: association_rules/association_rules.evaluate.ipynb
+      - Fpgrowth: association_rules/association_rules.fpgrowth.ipynb
+  - Classification:
+      - Intro: classification/index.md
+      - KNearestClassifier: classification/classification.knn.ipynb
+      - Logistic Regression: classification/classification.logistic_regression.ipynb
+  - Clustering:
+      - Intro: clustering/index.md
+      - KMeans: clustering/clustering.kmeans.ipynb
+  - Dataset:
+      - Intro: datasets/index.md
+      - Association Rules: datasets/datasets.association_rules.ipynb
+      - Covid Data: datasets/datasets.covid_dataset.ipynb
+      - Classification Data: datasets/datasets.classification.ipynb
+  - External:
+      - Intro: external/index.md
+      - Wrapper: external/external.wrapper.ipynb
+  - Regression:
+      - Intro: regression/index.md
+      - Linear Regression: regression/regression.linear_regression.ipynb
+
+plugins:
+  - mkdocs-jupyter:
+      ignore_h1_titles: True

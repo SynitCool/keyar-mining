@@ -2,8 +2,7 @@
 
 > :warning: **WARNING**: This package is created just for learning about machine learning algorithm!
 
-> :warning: **WARNING**: Not recommended to be using for high task data! 
-
+> :warning: **WARNING**: Not recommended to be using for high task data!
 
 ## Links
 
@@ -17,22 +16,21 @@
 
 #### PyPI
 
-To install keyar-mining, just execute  
+To install keyar-mining, just execute
 
 ```bash
-pip install keyar-mining  
+pip install keyar-mining
 ```
 
 #### Pypi download files
 
-If pypi files won't load the file : 
+If pypi files won't load the file :
+
 1. install [krmining](https://codeload.github.com/SynitCool/keyar-mining/tar.gz/refs/tags/0.0.1)
 2. unzip krmining.tar.gz
 3. move the files in keyar-mining to site-packages
 
 Why this happen cause i always forget to specify the config and setup :P
-
-
 
 <br>
 <br>
@@ -62,9 +60,8 @@ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
 AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.ter-generated graphics such as the plots produced by matplotlib fall under the BSD license mentioned above).
+SOFTWARE.
 ```
-
 
 ## Contact
 
